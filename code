@@ -1,0 +1,73 @@
+import java.util.Scanner;
+
+class Human {
+    private String name;
+    private int age;
+    private String gender;
+
+    // Default constructor
+    public Human() {
+        this.name = "Unknown";
+        this.age = 0;
+        this.gender = "Not Specified";
+    }
+
+    // Parameterized constructor
+    public Human(String name, int age, String gender) {
+        setName(name);
+        setAge(age);
+        setGender(gender);
+    }
+
+    public String getName() { return name; }
+    public void setName(String name) { this.name = name; }
+
+    public int getAge() { return age; }
+    public void setAge(int age) {
+        if (age >= 0 && age <= 120) {
+            this.age = age;
+        } else {
+            System.out.println("Invalid age. Setting to default (0).");
+            this.age = 0;
+        }
+    }
+
+    public String getGender() { return gender; }
+    public void setGender(String gender) { this.gender = gender; }
+
+    public void speak(String message) {
+        System.out.println(name + " says: " + message);
+    }
+
+    public void walk(int steps) {
+        System.out.println(name + " walked " + steps + " steps.");
+    }
+
+    public void displayInfo() {
+        System.out.println("Name: " + name);
+        System.out.println("Age: " + age);
+        System.out.println("Gender: " + gender);
+    }
+}
+
+public class HumanProfileApp {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter name: ");
+        String name = sc.nextLine();
+        System.out.print("Enter age: ");
+        int age = sc.nextInt();
+        sc.nextLine(); // consume newline
+        System.out.print("Enter gender: ");
+        String gender = sc.nextLine();
+
+        Human person = new Human(name, age, gender);
+
+        person.displayInfo();
+        person.speak("Hello! I am learning Java.");
+        person.walk(20);
+
+        sc.close();
+    }
+}
