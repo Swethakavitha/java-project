@@ -1,0 +1,13 @@
+Project Title: Human Profile Management System in Java
+Concept: A simple console-based Java program that allows you to create, update, and display information about a human profile (name, age, gender, hobbies, etc.) using Object-Oriented Programming concepts.
+Skills Highlighted:
+
+Encapsulation (private fields + getters/setters)
+
+Constructors (default & parameterized)
+
+Input handling with Scanner
+
+Method overloading
+
+Simple validation
